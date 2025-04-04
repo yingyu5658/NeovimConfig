@@ -12,6 +12,7 @@ return {
     ft = { "markdown" },
     build = function()
       vim.fn["mkdp#util#install"]()
+      vim.g.mkdp_browser = "firefox" -- 替换为你的浏览器路径
     end,
     keys = {
       { "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", desc = "Markdown 预览切换" },
@@ -19,6 +20,7 @@ return {
     config = function()
       vim.g.mkdp_browser = "firefox" -- 指定 Linux 默认浏览器
       vim.g.mkdp_auto_close = 0 -- 关闭自动退出预览
+      vim.env.PATH = vim.env.HOME .. "/.nvm/versions/node/v18.x/bin:" .. vim.env.PATH
     end,
   },
 
